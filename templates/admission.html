@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <section class="section container center" id="choose-level-section">
+        <div class="row">
+            <h2>NewSchool Registration Form</h2>
+            <p class="grey-text">Alternatively you may call us @ 01824729374</p>
+            <div class="col s12 input-field">
+                <h4>Select The Graduation Year:</h4>
+                <form action="POST">
+                    <select name="season" id="season">
+                        <option value="" selected disabled>Choose an option</option>
+                        <option value="Running">Running</option>
+                        <option value="2021">Summer 2021</option>
+                    </select>
+                    <h4>Select The Enrollment Batch:</h4>
+                    <select name="level" id="level">
+                        <option value="" selected disabled>Choose an option</option>
+                        <option value="class-9">CAIE O Level (class 9)</option>
+                        <option value="class-10">CAIE O Level (class 10)</option>
+                        <option value="class-11">CAIE AS Level</option>
+                        <option value="class-12">CAIE A2 Level</option>
+                    </select>
+                    <button type="submit" class="btn deep-orange darken-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,108 @@
+.container {
+    width: 80vw;
+}
+
+@media screen and (max-width:400px) {
+    .container {
+        width: 90vw;
+    }
+}
+
+p {
+    font-size: 18px;
+}
+
+.brand-logo img {
+    height: 95px;
+}
+
+nav {
+    height: 100px;
+}
+
+nav ul li,
+nav ul li a,
+.brand-logo {
+  line-height: 100px;
+}
+
+.sidenav-trigger {
+    padding-top: 15px;
+}
+
+.low-bright {
+    filter: brightness(40%);
+}
+
+.caption {
+    margin-top: 200px;
+}
+
+@media screen and (max-width: 630px) {
+    .caption {
+        margin-top: 100px;
+    }
+}
+
+#specials .specials-card {
+    padding-top: 15px;
+    height: 300px !important;
+}
+
+.tabs .indicator {
+    background-color: #e64a19;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background: transparent;
+}
+
+#stats .container {
+    margin-top: 130px;
+}
+
+@media screen and (max-width:600px) {
+    #stats .container {
+        margin-top: 60px;
+    } 
+}
+
+.tabs-content {
+    height: 1100px !important;
+}
+
+.info-card {
+    height: 520px;
+    padding-top: 15px !important;
+}
+
+.course-img {
+    height: 224px !important;
+}
+
+/* @media screen and (max-width:400px) {
+    .info-card {
+        height: 515px;
+    }
+
+    .course-img {
+        height: 200px;
+    }
+} */
+
+@media screen and (min-width:600px) and (max-width:992px) {
+    .course-img {
+        width: 100%;
+        height: 300px !important;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .tabs-content {
+        height: 3080px !important;
+    }
+}
+
+#gallery-section img {
+    height: 250px;
+}

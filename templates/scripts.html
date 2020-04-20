@@ -1,0 +1,38 @@
+{% load static %}
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/materialize.js' %}"></script>
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+
+    <script>
+        // sidenav
+        const sidenav = document.querySelector('.sidenav');
+        M.Sidenav.init(sidenav);
+
+        // slider
+        const slider = document.querySelector('.slider');
+        M.Slider.init(slider, {
+        indicators: false,
+        height: 480,
+        transiton: 500,
+        interval: 5000
+        });
+
+        // Material box
+        const materialBox = document.querySelectorAll('.material-box');
+        M.Materialbox.init(materialBox);
+
+        //Parallax
+        const parallax = document.querySelectorAll('.parallax');
+        M.Parallax.init(parallax);
+
+
+        //Tabs
+        const tabs = document.querySelector('.tabs');
+        M.Tabs.init(tabs, {
+            swipeable: true
+        })
+
+        //Select Forms
+        const select = document.querySelectorAll('select')
+        M.FormSelect.init(select)
+    </script>

@@ -1,0 +1,25 @@
+{% load static %}
+<header>
+    <!----- navbar ----->
+    <nav class="deep-orange darken-2">
+        <div class="nav-wrapper container">
+            <a href="" data-target='mobile-nav' class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <a class="brand-logo" href="home.html"><img src="{% static 'images/logo.png' %}" alt=""></a>
+            <ul class="hide-on-med-and-down right nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="admission.html">Admission</a></li>
+                <li><a href="">Courses</a></li>
+                <li><a href="">Location</a></li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-nav"> <!---- mobile navbar ---->
+        <li><a href="home.html">Home</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="">Courses</a></li>
+        <li><a href="">Location</a></li>
+    </ul>
+    <!--x-- navbar --x-->
+</header>
