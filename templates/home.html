@@ -134,15 +134,15 @@
             <div class="row">
                 <div class="col s12 m4">
                     <h4>Courses</h4>
-                    <h5 class="counter">20</h5>
+                    <h5 class="counter">{{ total_subjects }}</h5>
                 </div>
                 <div class="col s12 m4">
                     <h4>Teachers</h4>
-                    <h5 class="counter">12</h5>
+                    <h5 class="counter">{{ total_teachers }}</h5>
                 </div>
                 <div class="col s12 m4">
-                    <h4>Students</h4>
-                    <h5 class="counter">700</h5>
+                    <h4>Enrollments</h4>
+                    <h5 class="counter">{{ total_enrollments }}</h5>
                 </div>
             </div>
         </div>
@@ -168,149 +168,49 @@
             </div>
 
             <div class="col s12" id="o-levels">
+                {% for subject in o_level %}
                 <div class="col s12 l4 info-card">
                     <div class="img-container">
-                        <img src="{% static 'images/slider-1.jpg' %}" class="responsive-img course-img" alt="">
+                        <img src="{{ subject.subject_img.url }}" class="responsive-img course-img" alt="">
                     </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>11 seats available</span>
+                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>{{ subject.total_seats }} seats available</span>
                     <div class="text-container">
-                        <h4>Mathematics</h4>
-                        <h5>Mentor: Lorem Ipsum dilaka</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat error ut quo. Totam, porro!</p>
+                        <h4>{{ subject.subject_name }}</h4>
+                        <h5>Mentor: {{ subject.teacher_name }}</h5>
+                        <p>{{ subject.subject_details }}</p>
                     </div>
                     <div class="action-container">
+                        {% if subject.total_seats == 0 %}
+                        <div class="btn waves-effect waves-light blue-grey darken-4 disabled">Enroll</div>
+                        {% else %}
                         <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
+                        {% endif %}
                     </div>
                 </div>
-                <div class="col s12 l4 info-card">
-                    <div class="img-container">
-                        <img src="{% static 'images/slider-2.jpg' %}" class="responsive-img course-img" alt="">
-                    </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>11 seats available</span>
-                    <div class="text-container">
-                        <h4>Computer Science</h4>
-                        <h5>Mentor: Lorem Ahmed Fedaus</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat error ut quo. Totam, porro!</p>
-                    </div>
-                    <div class="action-container">
-                        <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
-                    </div>
-                </div>
-                <div class="col s12 l4 info-card">
-                    <div class="img-container">
-                        <img src="{% static 'images/slider-3.jpg' %}" class="responsive-img course-img" alt="">
-                    </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>11 seats available</span>
-                    <div class="text-container">
-                        <h4>English</h4>
-                        <h5>Mentor: Chengis Khan</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat error ut quo. Totam, porro!</p>
-                    </div>
-                    <div class="action-container">
-                        <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
-                    </div>
-                </div>
-                <div class="col s12 l4 info-card">
-                    <div class="img-container">
-                        <img src="{% static 'images/slider-2.jpg' %}" class="responsive-img course-img" alt="">
-                    </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>11 seats available</span>
-                    <div class="text-container">
-                        <h4>Business Studeis</h4>
-                        <h5>Mentor: Akhter Sir Economics</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat error ut quo. Totam, porro!</p>
-                    </div>
-                    <div class="action-container">
-                        <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
-                    </div>
-                </div>
-                <div class="col s12 l4 info-card">
-                    <div class="img-container">
-                        <img src="{% static 'images/slider-2.jpg' %}" class="responsive-img course-img" alt="">
-                    </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>11 seats available</span>
-                    <div class="text-container">
-                        <h4>Chemistry</h4>
-                        <h5>Mentor: DR. Bulbul Chakrabarty</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat error ut quo. Totam, porro!</p>
-                    </div>
-                    <div class="action-container">
-                        <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
-                    </div>
-                </div>
-                <div class="col s12 l4 info-card">
-                    <div class="img-container">
-                        <img src="{% static 'images/slider-3.jpg' %}" class="responsive-img course-img" alt="">
-                    </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>11 seats available</span>
-                    <div class="text-container">
-                        <h4>Physics</h4>
-                        <h5>Mentor: Aeronotical Engineer</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat error ut quo. Totam, porro!</p>
-                    </div>
-                    <div class="action-container">
-                        <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
             <div class="col s12" id="a-levels">
+                {% for subject in a_level %}
                 <div class="col s12 l4 info-card">
                     <div class="img-container">
-                        <img src="{% static 'images/slider-1.jpg' %}" class="responsive-img course-img" alt="">
+                        <img src="{{ subject.subject_img.url }}" class="responsive-img course-img" alt="">
                     </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>11 seats available</span>
+                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>{{ subject.total_seats }} seats available</span>
                     <div class="text-container">
-                        <h4>English</h4>
-                        <h5>Mentor: Chengis Khan</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat error ut quo. Totam, porro!</p>
+                        <h4>{{ subject.subject_name }}</h4>
+                        <h5>Mentor: {{ subject.teacher_name }}</h5>
+                        <p>{{ subject.subject_details }}</p>
                     </div>
                     <div class="action-container">
+                        {% if subject.total_seats == 0 %}
+                        <div class="btn waves-effect waves-light blue-grey darken-4 disabled">Enroll</div>
+                        {% else %}
                         <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
+                        {% endif %}
                     </div>
                 </div>
-                <div class="col s12 l4 info-card">
-                    <div class="img-container">
-                        <img src="{% static 'images/slider-3.jpg' %}" class="responsive-img course-img" alt="">
-                    </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>11 seats available</span>
-                    <div class="text-container">
-                        <h4>Business Studeis</h4>
-                        <h5>Mentor: Akhter Sir Economics</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat error ut quo. Totam, porro!</p>
-                    </div>
-                    <div class="action-container">
-                        <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
-                    </div>
-                </div>
-                <div class="col s12 l4 info-card">
-                    <div class="img-container">
-                        <img src="{% static 'images/slider-2.jpg' %}" class="responsive-img course-img" alt="">
-                    </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>11 seats available</span>
-                    <div class="text-container">
-                        <h4>Chemistry</h4>
-                        <h5>Mentor: DR. Bulbul Chakrabarty</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat error ut quo. Totam, porro!</p>
-                    </div>
-                    <div class="action-container">
-                        <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
-                    </div>
-                </div>
-                <div class="col s12 l4 info-card">
-                    <div class="img-container">
-                        <img src="{% static 'images/slider-3.jpg' %}" class="responsive-img course-img" alt="">
-                    </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>11 seats available</span>
-                    <div class="text-container">
-                        <h4>Physics</h4>
-                        <h5>Mentor: Aeronotical Engineer</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat error ut quo. Totam, porro!</p>
-                    </div>
-                    <div class="action-container">
-                        <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

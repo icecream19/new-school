@@ -20,7 +20,8 @@ class Subject(models.Model):
     subject_name = models.CharField(max_length=50)
     teacher_name = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     total_seats = models.IntegerField()
-    subject_details = models.CharField(max_length=50)
+    subject_details = models.CharField(max_length=100)
+    subject_img = models.ImageField()
 
     def __str__(self):
         return self.subject_name
@@ -42,6 +43,7 @@ class StudentRegistration(models.Model):
 class Season(models.Model):
     season = models.CharField(max_length=2, primary_key=True)
     subject = models.ManyToManyField(Subject)
+    running = models.BooleanField(default=False)
     
     def __str__(self):
         return self.season
