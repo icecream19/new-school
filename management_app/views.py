@@ -69,5 +69,5 @@ def admission(request):
 
 
 
-# def contact(request, *args, **kwargs):
+def contact(request, *args, **kwargs):
     

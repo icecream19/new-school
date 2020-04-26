@@ -27,9 +27,9 @@ class RegistrationForm(forms.ModelForm):
         self.fields['selected_subject'].queryset = Subject.objects.filter(season=session_season)
 
 
-# class ContactForm(forms.Form):
-#     prefix = 'contactform'
+class ContactForm(forms.Form):
+    prefix = 'contactform'
 
-#     name = forms.CharField(max_length=50)
-#     email = forms.EmailField()
-#     message = forms.CharField()
+    name = forms.CharField(max_length=50)
+    email = forms.EmailField()
+    message = forms.CharField()
