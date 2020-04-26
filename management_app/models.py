@@ -24,7 +24,7 @@ class Subject(models.Model):
     subject_img = models.ImageField()
 
     def __str__(self):
-        return self.subject_name
+        return self.get_level_display() + ' ' + self.subject_name
 
     class Meta:
         unique_together = (('level', 'subject_name'),)
@@ -49,4 +49,16 @@ class Season(models.Model):
         return self.season
     
 
+class Registration(models.Model):
+    student_name = models.CharField(max_length=50)
+    selected_season = models.CharField(max_length=2)
+    selected_subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    student_address = models.TextField()
+    student_phone = models.CharField(max_length=11)
+
+    def __str__(self):
+        return self.student_name
+
+    class Meta:
+        unique_together = (('student_name', 'selected_season', 'selected_subject'),)
 

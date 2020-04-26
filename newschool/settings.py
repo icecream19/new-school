@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'management_app',
+
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,13 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+
+
+
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# SMTP_PORT = '587'
+# EMAIL_HOST_USER = 'rafsunalmujib118@gmail.com'
+# EMAIL_HOST_PASSWORD = 'mylollegends'
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} - Determiner{% endblock title %}
+{% block content %}
+
+    <section class="section container center" id="choose-level-section">
+        <div class="row">
+            <h2>NewSchool Registration Form</h2>
+            <p class="grey-text">Alternatively you may call us @ 01824729374</p>
+            <div class="col s12 input-field">
+                <h4>Select Season:</h4>
+                <form action="" method="POST">{% csrf_token %}
+                    {{ form.season.errors }}
+                    {{ form.season }}
+                    <button type="submit" class="btn deep-orange darken-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

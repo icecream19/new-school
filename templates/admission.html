@@ -1,29 +1,39 @@
 {% extends 'base.html' %}
+{% block title %} - Admission{% endblock title %}
 {% block content %}
 
-    <section class="section container center" id="choose-level-section">
-        <div class="row">
-            <h2>NewSchool Registration Form</h2>
-            <p class="grey-text">Alternatively you may call us @ 01824729374</p>
-            <div class="col s12 input-field">
-                <h4>Select The Graduation Year:</h4>
-                <form action="POST">
-                    <select name="season" id="season">
-                        <option value="" selected disabled>Choose an option</option>
-                        <option value="Running">Running</option>
-                        <option value="2021">Summer 2021</option>
-                    </select>
-                    <h4>Select The Enrollment Batch:</h4>
-                    <select name="level" id="level">
-                        <option value="" selected disabled>Choose an option</option>
-                        <option value="class-9">CAIE O Level (class 9)</option>
-                        <option value="class-10">CAIE O Level (class 10)</option>
-                        <option value="class-11">CAIE AS Level</option>
-                        <option value="class-12">CAIE A2 Level</option>
-                    </select>
-                    <button type="submit" class="btn deep-orange darken-2">Submit</button>
-                </form>
-            </div>
+<section class="section container center" id="choose-level-section">
+    <div class="row">
+        <h2>NewSchool Registration Form</h2>
+        <p class="grey-text">Alternatively you may call us @ 01824729374</p>
+        <div class="col s12">
+            <form method="POST">{% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="input-field col s12">
+                    {{ form.student_name.errors }}
+                    {{ form.student_name }}
+                    <label for="{{ form.student_name.id_for_label }}">Student name</label>
+                </div>
+                <div class="input-field col s12">
+                    {{ form.selected_subject.errors }}
+                    {{ form.selected_subject }}
+                    <label for="{{ form.selected_subject.id_for_label }}">Select a subject</label>
+                </div>
+                <div class="input-field col s12">
+                    {{ form.student_address.errors }}
+                    {{ form.student_address }}
+                    <label for="{{ form.student_address.id_for_label }}">Student address</label>
+                </div>
+                <div class="input-field col s12">
+                    {{ form.student_phone.errors }}
+                    {{ form.student_phone }}
+                    <label for="{{ form.student_phone.id_for_label }}">Phone number</label>
+                </div>
+                <button type="submit" class="btn deep-orange darken-2">Submit</button>
+            </form>
+            <p class="grey-text">Note: 1 student may not apply for a specific subject more than once each season</p>
         </div>
-    </section>
+    </div>
+</section>
+
 {% endblock content %}

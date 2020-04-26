@@ -173,7 +173,7 @@
                     <div class="img-container">
                         <img src="{{ subject.subject_img.url }}" class="responsive-img course-img" alt="">
                     </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>{{ subject.total_seats }} seats available</span>
+                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>{{ subject.total_seats }} seats</span>
                     <div class="text-container">
                         <h4>{{ subject.subject_name }}</h4>
                         <h5>Mentor: {{ subject.teacher_name }}</h5>
@@ -181,9 +181,9 @@
                     </div>
                     <div class="action-container">
                         {% if subject.total_seats == 0 %}
-                        <div class="btn waves-effect waves-light blue-grey darken-4 disabled">Enroll</div>
+                        <a href="" class="btn waves-effect waves-light blue-grey darken-4 disabled">Enroll</a>
                         {% else %}
-                        <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
+                        <a href="{% url 'management_app:determining-page' %}" class="btn waves-effect waves-light blue-grey darken-4">Enroll</a>
                         {% endif %}
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                     <div class="img-container">
                         <img src="{{ subject.subject_img.url }}" class="responsive-img course-img" alt="">
                     </div>
-                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>{{ subject.total_seats }} seats available</span>
+                    <span class="available-seats right grey-text text-darken-4"><i class="material-icons tiny">person</i>{{ subject.total_seats }} seats</span>
                     <div class="text-container">
                         <h4>{{ subject.subject_name }}</h4>
                         <h5>Mentor: {{ subject.teacher_name }}</h5>
@@ -204,9 +204,9 @@
                     </div>
                     <div class="action-container">
                         {% if subject.total_seats == 0 %}
-                        <div class="btn waves-effect waves-light blue-grey darken-4 disabled">Enroll</div>
+                        <a href="" class="btn waves-effect waves-light blue-grey darken-4 disabled">Enroll</a>
                         {% else %}
-                        <div class="btn waves-effect waves-light blue-grey darken-4">Enroll</div>
+                        <a href="{% url 'management_app:determining-page' %}" class="btn waves-effect waves-light blue-grey darken-4">Enroll</a>
                         {% endif %}
                     </div>
                 </div>
