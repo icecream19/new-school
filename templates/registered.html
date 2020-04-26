@@ -8,3 +8,26 @@
 </div>
 
 {% endblock content %}
+
+{% block contact %}
+
+
+<div class="input-field">
+    {{ contactform.name.errors }}
+    {{ contactform.name }}
+    <label for="{{ contactform.name.id_for_label }}">Your Name</label>
+</div>
+<div class="input-field">
+    {{ contactform.email.errors }}
+    {{ contactform.email }}
+    <label for="{{ contactform.email.id_for_label }}">Your email address</label>
+</div>
+<div class="input-field">
+    {{ contactform.message.errors }}
+    {{ contactform.message }}
+    <label for="{{ contactform.message.id_for_label }}">Your message</label>
+    <button type="submit" class="btn deep-orange darken-2 waves-effect waves-light" name="contactphrase">Send</button>
+</div>
+
+
+{% endblock contact %}

@@ -29,7 +29,7 @@
                     {{ form.student_phone }}
                     <label for="{{ form.student_phone.id_for_label }}">Phone number</label>
                 </div>
-                <button type="submit" class="btn deep-orange darken-2">Submit</button>
+                <button type="submit" class="btn deep-orange darken-2" name="admissionphrase">Submit</button>
             </form>
             <p class="grey-text">Note: 1 student may not apply for a specific subject more than once each season</p>
         </div>
@@ -37,3 +37,27 @@
 </section>
 
 {% endblock content %}
+
+
+{% block contact %}
+
+
+<div class="input-field">
+    {{ contactform.name.errors }}
+    {{ contactform.name }}
+    <label for="{{ contactform.name.id_for_label }}">Your Name</label>
+</div>
+<div class="input-field">
+    {{ contactform.email.errors }}
+    {{ contactform.email }}
+    <label for="{{ contactform.email.id_for_label }}">Your email address</label>
+</div>
+<div class="input-field">
+    {{ contactform.message.errors }}
+    {{ contactform.message }}
+    <label for="{{ contactform.message.id_for_label }}">Your message</label>
+    <button type="submit" class="btn deep-orange darken-2 waves-effect waves-light name="contactphrase"">Send</button>
+</div>
+
+
+{% endblock contact %}

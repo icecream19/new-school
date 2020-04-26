@@ -32,4 +32,4 @@ class ContactForm(forms.Form):
 
     name = forms.CharField(max_length=50)
     email = forms.EmailField()
-    message = forms.CharField()
+    message = forms.CharField(widget=forms.Textarea(attrs={'class':'materialize-textarea'}))

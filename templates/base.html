@@ -12,7 +12,18 @@
     
     {% endblock content %}
 
-    {% include 'footer.html' %}
+    <footer class="page-footer blue-grey darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 l6">
+                    <h4>Leave us a message</h4>
+                    <form action="" method="POST">{% csrf_token %}
+                        {% block contact %}
+                        {% endblock contact %}
+                    </form>
+                </div>
+                {% include 'footer.html' %}
+    </footer>
 
     {% include 'scripts.html' %}
 
