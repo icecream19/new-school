@@ -25,7 +25,7 @@ def home(request):
     context = {
         'total_teachers': Teacher.objects.all().count(),
         'total_subjects': Subject.objects.all().count(),
-        'total_enrollments': StudentRegistration.objects.all().count(),
+        'total_enrollments': Registration.objects.all().count(),
         'o_level': o_level,
         'a_level': a_level,
         'contactform': contactform,
